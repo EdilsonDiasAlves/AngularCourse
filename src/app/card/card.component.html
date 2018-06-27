@@ -1,0 +1,9 @@
+<div class="card" >
+    
+    <app-foto [url]="fotoObj.url" [titulo]="fotoObj.titulo"></app-foto>
+
+    <div class="card-body">
+        <h5 class="card-title">{{fotoObj.titulo}}</h5>
+        <ng-content></ng-content>
+    </div>
+</div>
