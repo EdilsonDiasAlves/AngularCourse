@@ -8,20 +8,23 @@ import { CardModule } from './card/card.module';
 import { ListagemComponent } from './listagem/listagem.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ModuleWithProviders } from './app-routes';
-
+import { FormsModule } from "@angular/forms";
+import { MensagemComponent } from './mensagem/mensagem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListagemComponent,
-    CadastroComponent
+    CadastroComponent,
+    MensagemComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FotoModule,
     CardModule,
-    ModuleWithProviders
+    ModuleWithProviders,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
