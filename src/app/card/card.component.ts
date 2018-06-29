@@ -1,3 +1,4 @@
+import { FotoService } from './../service/foto.service';
 import { Component, Input } from "@angular/core";
 import { FotoComponent } from "../foto/foto.component";
 
@@ -7,5 +8,6 @@ import { FotoComponent } from "../foto/foto.component";
     styles: []
 })
 export class CardComponent{
+
     @Input() fotoObj: FotoComponent;
 }
