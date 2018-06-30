@@ -2,7 +2,7 @@ import { FotoService } from './../service/foto.service';
 import { MensagemComponent } from './../mensagem/mensagem.component';
 import { Component, OnInit } from '@angular/core';
 import { FotoComponent } from '../foto/foto.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -15,7 +15,8 @@ export class CadastroComponent implements OnInit {
   mensagem = new MensagemComponent();
 
   constructor(private fotoService: FotoService,
-              private rotaAtiva: ActivatedRoute) { 
+              private rotaAtiva: ActivatedRoute,
+              private roteador: Router) { 
 
                 let fotoId = this.rotaAtiva.snapshot.params.fotoId;
 
@@ -48,7 +49,12 @@ export class CadastroComponent implements OnInit {
       this.fotoService.alterar(this.foto).subscribe(
         () => {
           this.mensagem.texto = `${this.foto.titulo} alterada com sucesso`,
-          this.mensagem.tipo = 'success'
+          this.mensagem.tipo = 'success',
+          
+
+          setTimeout(() => {
+              this.roteador.navigate([''])
+            }, 2000);
         }
       )
     } else {
